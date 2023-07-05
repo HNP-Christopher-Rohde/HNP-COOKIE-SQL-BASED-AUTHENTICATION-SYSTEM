@@ -13,3 +13,11 @@ Our approach is based on a SQL-based AUTH method that uses cookies (tokens), as 
 Through this method, we enable secure and effective use of cookies for login and session functions without the usual limitations of traditional cookies.
 
 It works on all systems/websites since no system-specific tags/hooks are used. It could easily be converted into a WordPress plugin. The current authentication system operates with the use of 2 domains/servers, but it would be possible to add an additional server/domain in between (AUTH-SERVER/AUTH-DOMAIN). This would allow for multiple encryptions, providing extremely high security.
+
+Now:
+![logic-A-1 (1)](https://github.com/hnp-chris/HNP-COOKIE-SQL-BASED-AUTHENTICATION-SYSTEM/assets/138715217/17c06fe4-7890-4c33-bf41-45148a8b7103)
+
+
+Later: 
+![logic1 (1)](https://github.com/hnp-chris/HNP-COOKIE-SQL-BASED-AUTHENTICATION-SYSTEM/assets/138715217/32dd700c-25c3-4179-b18e-fb162bc47fc3)
+
