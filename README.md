@@ -24,32 +24,26 @@ Later:
 ![logic1 (1)](https://github.com/hnp-chris/HNP-COOKIE-SQL-BASED-AUTHENTICATION-SYSTEM/assets/138715217/32dd700c-25c3-4179-b18e-fb162bc47fc3)
 
 
-
 Roadmap (coming soon):
-Version 1.1
-
+**Version 1.1**
 New features:
+- OpenSSL encryption for tokens & cookies
+- Automatic removal of tokens from the database
+- CSS styling
 
-    OpenSSL encryption for token & cookie
-    Automatic removal of token from the database
-    CSS styling
-    Version 1.2
-
+**Version 1.2**
 New features:
+- Expand logic to include 4 points (addition of an extra index.html for entry point)
+- Enhance CSS styling
 
-    Extend logic to 4 points (additional index.html for entry point)
-    Expand CSS styling
-    Version 1.3
-
+**Version 1.3**
 New features:
+- Optional inclusion of an AUTH Server / AUTH Domain mid-point
+- Additional encryption using different encryption methods
 
-    Add optional AUTH server/AUTH domain mid-point
-    Additional encryption with different encryption methods
-    Version 2.0
-
+**Version 2.0**
 New features:
-
-    Final styling
-    Use $_POST instead of $_GET
-    Additional data can be "sent along" (such as usernames, passwords, age, etc.)
-    Additional data will be encrypted.
+- Finalize styling
+- Utilize $_POST instead of $_GET
+- Include the ability to "send along" additional data (such as usernames, passwords, age, etc.)
+- Encrypt the additional data for enhanced security.
