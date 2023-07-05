@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Name: HNP Cookie & Token Auth-System
+Description: Erstellt ein Cookie-basiertes SQL Authentifizierung-System. Domain- und Serverübergreifend.
+Author: Homepage-nach-Preis
+Version: 1.0
+Author URI: https://homepage-nach-preis.de/
+License: Creative Commons Non-Commercial - CC-NC 4.0
+-->
+<html>
+<head>
+    <title>HNP Auth-System</title>
+</head>
+<body>
+    <h2>HNP Cookie & Token Auth-System</h2>
+
+    <script>
+        // Token aus dem Cookie lesen
+        var token = document.cookie.replace(/(?:(?:^|.*;\s*)hnp_auth_token\s*=\s*([^;]*).*$)|^.*$/, "$1");
+
+        // Überprüft den Token in der Datenbank
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://DOMAIN-B.COM/index.php?token=' + encodeURIComponent(token), true);
+        xhr.onload = function() {
+            if (xhr.status === 200 && xhr.responseText.includes('Authentifizierung erfolgreich')) {
+                // Überprüfung erfolgreich, zeige "Erfolgreich eingeloggt" und Logout-Button
+                var successMessage = document.createElement('p');
+                successMessage.textContent = 'Erfolgreich eingeloggt';
+                document.body.appendChild(successMessage);
+
+                var logoutButton = document.createElement('button');
+                logoutButton.textContent = 'Logout';
+                logoutButton.onclick = logout;
+                document.body.appendChild(logoutButton);
+
+                document.body.appendChild(document.createElement('br'));
+                document.body.appendChild(document.createElement('br'));
+
+                var authDomainButton = document.createElement('button');
+                authDomainButton.textContent = 'Zur Auth-Domain';
+                authDomainButton.onclick = redirectToAuth;
+                document.body.appendChild(authDomainButton);
+            } else {
+                // Überprüfung fehlgeschlagen, zeige "Login fehlgeschlagen"
+                var errorMessage = document.createElement('p');
+                errorMessage.textContent = 'Login fehlgeschlagen oder ausgeloggt.';
+                document.body.appendChild(errorMessage);
+
+                document.body.appendChild(document.createElement('br'));
+                document.body.appendChild(document.createElement('br'));
+
+                var authDomainButton = document.createElement('button');
+                authDomainButton.textContent = 'Zur Auth-Domain';
+                authDomainButton.onclick = redirectToAuth;
+                document.body.appendChild(authDomainButton);
+            }
+        };
+        xhr.send();
+
+        function logout() {
+            // Löschen des hnp_auth_token Cookies
+            document.cookie = 'hnp_auth_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=DOMAIN-B.COM; secure';
+
+            // Weiterleitung zur Startseite oder einer anderen Seite nach dem Logout
+            window.location.href = "index.html";
+        }
+
+        function redirectToAuth() {
+            // Weiterleitung zur Auth-Domain
+            window.location.href = "https://DOMAIN-A.COM/";
+        }
+    </script>
+</body>
+</html>
