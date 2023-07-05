@@ -25,6 +25,7 @@ Later:
 
 
 Roadmap (coming soon):
+
 **Version 1.1**
 New features:
 - OpenSSL encryption for tokens & cookies
