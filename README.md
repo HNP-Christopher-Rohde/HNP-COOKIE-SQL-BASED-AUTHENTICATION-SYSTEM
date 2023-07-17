@@ -1,4 +1,4 @@
-# HNP-COOKIE-SQL-BASED-AUTHENTICATION-SYSTEM
+# hnp-cookie-sql-based-authentication-system
 COOKIE &amp; SQL BASED AUTHENTICATION SYSTEM
 
 
